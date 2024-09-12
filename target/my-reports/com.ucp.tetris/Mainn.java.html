@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Mainn.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">com.ucp.tetris</a> &gt; <span class="el_source">Mainn.java</span></div><h1>Mainn.java</h1><pre class="source lang-java linenums">package com.ucp.tetris;
+
+<span class="nc" id="L3">public class Mainn {</span>
+    public static void main(String[] args) {
+<span class="nc" id="L5">        Board board = new Board();</span>
+        /*board.indiceAleatorioPiezas = 0;
+        board.indiceAleatorioDireccionRotar = 1;
+        board.indiceAleatorioNumeroRotaciones = 1;
+        board.piezaAleatoriaColumn = 0;
+        board.generateNewPiece();
+        board.agregarPiezasEnElBoard();
+        for(int i = 0; i &lt;18; i++){
+            board.moverPiezaAbajo();
+        }
+        board.piezaAleatoriaColumn = 2;
+        board.generateNewPiece();
+        board.agregarPiezasEnElBoard();
+        for(int i = 0; i &lt;18; i++){
+            board.moverPiezaAbajo();
+        }board.piezaAleatoriaColumn = 4;
+        board.generateNewPiece();
+        board.agregarPiezasEnElBoard();
+        for(int i = 0; i &lt;18; i++){
+            board.moverPiezaAbajo();
+        }
+        board.piezaAleatoriaColumn = 6;
+        board.generateNewPiece();
+        board.agregarPiezasEnElBoard();
+        for(int i = 0; i &lt;18; i++){
+            board.moverPiezaAbajo();
+        }board.piezaAleatoriaColumn = 8;
+        board.generateNewPiece();
+        board.agregarPiezasEnElBoard();
+        for(int i = 0; i &lt;18; i++){
+            board.moverPiezaAbajo();
+        }
+        board.generateNewPiece();
+        board.agregarPiezasEnElBoard();
+        board.moverPiezaAbajo();
+        while(board.juegoTerminado() == false){
+            board.moverPiezaAbajo();
+            board.borrarFilaLlena();
+                if(board.juegoTerminado() == true){
+                    System.out.println(&quot;GAME OVER&quot;);
+ }
+}   */
+<span class="nc" id="L47">        board.indiceAleatorioPiezas = 1;</span>
+<span class="nc" id="L48">        board.piezaAleatoriaColumn = 0;</span>
+<span class="nc" id="L49">        board.indiceAleatorioNumeroRotaciones = 0;</span>
+<span class="nc" id="L50">        board.generateNewPiece();</span>
+<span class="nc" id="L51">        board.agregarPiezasEnElBoard();</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        for(int i = 0; i&lt;19; i++){</span>
+<span class="nc" id="L53">        board.moverPiezaAbajo();</span>
+        }
+        
+<span class="nc" id="L56">        board.rotarPiezaIzquierda();</span>
+<span class="nc" id="L57">board.printBoard();</span>
+<span class="nc" id="L58">}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

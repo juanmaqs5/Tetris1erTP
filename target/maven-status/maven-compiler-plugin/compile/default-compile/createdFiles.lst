@@ -1,0 +1,9 @@
+com\ucp\tetris\PieceStick.class
+com\ucp\tetris\Tetris.class
+com\ucp\tetris\PieceSquare.class
+com\ucp\tetris\Board.class
+com\ucp\tetris\PieceT.class
+com\ucp\tetris\IRotator.class
+com\ucp\tetris\Piece.class
+com\ucp\tetris\PieceL.class
+com\ucp\tetris\PieceDog.class

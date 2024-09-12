@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TetrisTest" time="0.078" tests="84" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="c:\Users\alumnos\Desktop\Paradigma II\tetris\target\test-classes;c:\Users\alumnos\Desktop\Paradigma II\tetris\target\classes;C:\Users\alumnos\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\alumnos\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Eclipse Adoptium"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://adoptium.net/"/>
+    <property name="user.timezone" value="America/Buenos_Aires"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="AR"/>
+    <property name="sun.boot.library.path" value="C:\Users\alumnos\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin"/>
+    <property name="sun.java.command" value="C:\Users\alumnos\AppData\Local\Temp\surefire2536594520004788279\surefirebooter2952915056069694835.jar C:\Users\alumnos\AppData\Local\Temp\surefire2536594520004788279 2023-09-12T17-06-14_874-jvmRun1 surefire14378850480674841557tmp surefire_016579037769565090402tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="c:\Users\alumnos\Desktop\Paradigma II\tetris\target\test-classes;c:\Users\alumnos\Desktop\Paradigma II\tetris\target\classes;C:\Users\alumnos\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\alumnos\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\alumnos"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="C:\Users\alumnos\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="c:\Users\alumnos\Desktop\Paradigma II\tetris"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\alumnos\AppData\Local\Temp\surefire2536594520004788279\surefirebooter2952915056069694835.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.8+7"/>
+    <property name="user.name" value="alumnos"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Temurin-17.0.8+7"/>
+    <property name="localRepository" value="C:\Users\alumnos\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\alumnos\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.8"/>
+    <property name="user.dir" value="c:\Users\alumnos\Desktop\Paradigma II\tetris"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\alumnos\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\apache-maven-3.9.4\bin;C:\Users\alumnos\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin;C:\Users\alumnos\AppData\Local\Microsoft\WindowsApps;;C:\Users\alumnos\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Eclipse Adoptium"/>
+    <property name="java.vm.version" value="17.0.8+7"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="rotarIzquierdaStickDColuma1_Test" classname="TetrisTest" time="0.004"/>
+  <testcase name="rotarDerechaDogLeftColumna0_test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaPiezaEnElBoard_Test" classname="TetrisTest" time="0.002"/>
+  <testcase name="RotarDerecha2VecesStick_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda2VecesDogRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="alMoverHaciaAbajoLasPiezasSeSuperponen_Test" classname="TetrisTest" time="0.001"/>
+  <testcase name="RotarIzquierdaStick_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaTColumna0_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha3VecesLRight_Test" classname="TetrisTest" time="0.003"/>
+  <testcase name="rotarDerecha4VecesLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaDogLeftColumna0_test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaDogRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="Posiciones_Test" classname="TetrisTest" time="0"/>
+  <testcase name="moverColumna2VecesIzquierdaStick_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha2VecesDogLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="agregarUnaPiezaRotadaHaciaLaIzquierdaEnElBoard_Test" classname="TetrisTest" time="0"/>
+  <testcase name="PieceStick_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda4VecesLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="agregarUnaPiezaEnElBoard_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaStickDColuma1_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha3VecesLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaDogLeftRotadoDerecha" classname="TetrisTest" time="0"/>
+  <testcase name="moverColumnaIzquierdaDogRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha2VecesT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="createBoard_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha3VecesT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="PieceT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="moverHaciaAbajoYRotarPieza_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha2VecesPieceLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="alMoverHaciaAbajoSuperaLosLimitesDelBoard_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha2VecesPieceLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha4VecesT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaDogRightColumna0_test" classname="TetrisTest" time="0"/>
+  <testcase name="agregarUnaPiezaRotadaHaciaLaDerechaEnElBoard_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerecha4VecesLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda2VecesPieceLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaPieceLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="PieceLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaLLeftColumna0_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaSquare_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaDogLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="alRotarDerechaLasPiezasSeSuperponen_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaPieceLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaPiezaEnElBoard_Test" classname="TetrisTest" time="0.001"/>
+  <testcase name="rotarDerecha2VecesDogRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda4VecesLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="moverColumnaIzquierdaStick_Test" classname="TetrisTest" time="0"/>
+  <testcase name="PieceLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="PieceDogRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="moverPiezaHaciaAbajo_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaStickColuma0_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaSquare_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaStickIColuma1_Test" classname="TetrisTest" time="0"/>
+  <testcase name="alRotarIzquierdaLasPiezasSeSuperponen_Test" classname="TetrisTest" time="0"/>
+  <testcase name="PieceSquare_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda2VecesT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="moverColumnaIzquierdaDogLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda2VecesPieceLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda3VecesT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaLLeftColumna0_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaDogRightColumna0_test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda3VecesPieceLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda4VecesT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="moverColumnaIzquierdaLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaPieceLLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaStickColuma0_Test" classname="TetrisTest" time="0"/>
+  <testcase name="moverColumaIzquierdaT_Test" classname="TetrisTest" time="0"/>
+  <testcase name="create_Tetris" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaDogRightRotadoDerecha" classname="TetrisTest" time="0"/>
+  <testcase name="alRotarIzquierdaSuperaLosLimitesDelTablero_Test" classname="TetrisTest" time="0"/>
+  <testcase name="PieceDogLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="borrarLineTetris_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaTColumna0_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaDogLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaStickIColuma1_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarDerechaDogRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda3VecesLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierda2VecesDogLeft_Test" classname="TetrisTest" time="0"/>
+  <testcase name="rotarIzquierdaPieceLRight_Test" classname="TetrisTest" time="0"/>
+  <testcase name="RotarIquierda2VecesStick_Test" classname="TetrisTest" time="0"/>
+  <testcase name="alRotarDerechaSuperaLosLimitesDelTablero_Test" classname="TetrisTest" time="0"/>
+  <testcase name="RotarDerechaStick_Test" classname="TetrisTest" time="0"/>
+</testsuite>

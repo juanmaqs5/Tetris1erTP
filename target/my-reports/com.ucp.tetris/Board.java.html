@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Board.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">com.ucp.tetris</a> &gt; <span class="el_source">Board.java</span></div><h1>Board.java</h1><pre class="source lang-java linenums">package com.ucp.tetris;
+
+import java.util.Arrays;
+import java.util.Random;
+
+public class Board {
+    public int board[][]; 
+<span class="fc" id="L8">    public Random random = new Random();</span>
+    public Piece piezaAleatoria;
+    public Piece piezaRotada;
+<span class="fc" id="L11">    public int indiceAleatorioPiezas = random.nextInt(3);</span>
+<span class="fc" id="L12">    public int indiceAleatorioDireccionRotar = random.nextInt(2);</span>
+<span class="fc" id="L13">    public int indiceAleatorioNumeroRotaciones = random.nextInt(4);</span>
+<span class="fc" id="L14">    public int piezaAleatoriaColumn = random.nextInt(10);</span>
+    public int puntero;
+    public int pieceFila;
+
+<span class="fc" id="L18">    public Board() {</span>
+<span class="fc" id="L19">        board = new int[20][10];</span>
+<span class="fc" id="L20">    }</span>
+    
+    public void generateNewPiece() {
+        /*indiceAleatorioPiezas = random.nextInt(3);*/
+<span class="fc" id="L24">        pieceFila = 0;</span>
+<span class="pc bpc" id="L25" title="1 of 4 branches missed.">        switch (indiceAleatorioPiezas){</span>
+        case 0:
+<span class="fc" id="L27">        piezaAleatoria = new PieceSquare();</span>
+<span class="fc" id="L28">            break;</span>
+        case 1:
+<span class="fc" id="L30">        piezaAleatoria = new PieceStick();</span>
+<span class="fc" id="L31">        break;</span>
+        case 2:
+<span class="fc" id="L33">        piezaAleatoria = new PieceT();</span>
+<span class="fc" id="L34">        break;</span>
+        default:
+            break;
+    }
+
+    /*indiceAleatorioDireccionRotar = random.nextInt(2);
+    indiceAleatorioNumeroRotaciones = random.nextInt(4);*/
+    //piezaAleatoriaColumn = random.nextInt(10);
+
+<span class="fc bfc" id="L43" title="All 2 branches covered.">    for(int i = 0; i &lt; indiceAleatorioNumeroRotaciones ; i++){</span>
+<span class="fc bfc" id="L44" title="All 2 branches covered.">        if(indiceAleatorioDireccionRotar == 0){</span>
+<span class="fc" id="L45">                piezaAleatoria.rotarDerecha();</span>
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        }else if(indiceAleatorioDireccionRotar == 1){</span>
+<span class="fc" id="L47">                piezaAleatoria.rotarIzquierda();</span>
+            }
+    }           
+<span class="pc bpc" id="L50" title="8 of 20 branches missed.">            if(indiceAleatorioPiezas == 0 &amp;&amp; piezaAleatoriaColumn == 9 || indiceAleatorioPiezas == 2 &amp;&amp; indiceAleatorioNumeroRotaciones == 1 &amp;&amp; indiceAleatorioDireccionRotar == 0 &amp;&amp; piezaAleatoriaColumn == 9 || indiceAleatorioPiezas == 2 &amp;&amp; indiceAleatorioNumeroRotaciones == 3 &amp;&amp; indiceAleatorioDireccionRotar == 1 &amp;&amp; piezaAleatoriaColumn == 9){</span>
+<span class="nc" id="L51">                piezaAleatoriaColumn = 8;</span>
+<span class="pc bpc" id="L52" title="2 of 10 branches missed.">                }else if(piezaAleatoria.matriz[0][0] == 1 &amp;&amp; piezaAleatoria.matriz[0][1] == 1 &amp;&amp; piezaAleatoria.matriz[0][2] == 1 &amp;&amp; piezaAleatoria.matriz[0][3] == 1 &amp;&amp; piezaAleatoriaColumn &gt; 6){</span>
+<span class="fc" id="L53">                piezaAleatoriaColumn = 6;</span>
+<span class="pc bpc" id="L54" title="5 of 8 branches missed.">                }else if(piezaAleatoria.matriz[0][2] == 1 &amp;&amp; piezaAleatoria.matriz[1][2] == 1 &amp;&amp; piezaAleatoria.matriz[2][2] == 1 &amp;&amp; piezaAleatoria.matriz[3][2] == 1){</span>
+<span class="nc" id="L55">                    piezaAleatoria.moverColumnaIzquierda();</span>
+<span class="nc" id="L56">                    piezaAleatoria.moverColumnaIzquierda();</span>
+<span class="pc bpc" id="L57" title="2 of 8 branches missed.">                }else if(piezaAleatoria.matriz[0][1] == 1 &amp;&amp; piezaAleatoria.matriz[1][1] == 1 &amp;&amp; piezaAleatoria.matriz[2][1] == 1 &amp;&amp; piezaAleatoria.matriz[3][1] == 1){</span>
+<span class="nc" id="L58">                    piezaAleatoria.moverColumnaIzquierda();</span>
+<span class="pc bpc" id="L59" title="5 of 8 branches missed.">                }else if(indiceAleatorioPiezas == 2 &amp;&amp; indiceAleatorioNumeroRotaciones != 1 &amp;&amp; indiceAleatorioNumeroRotaciones != 3 &amp;&amp; piezaAleatoriaColumn &gt; 7){</span>
+<span class="nc" id="L60">                   piezaAleatoriaColumn = 7;</span>
+<span class="pc bpc" id="L61" title="4 of 12 branches missed.">                }else if(indiceAleatorioPiezas == 2 &amp;&amp; indiceAleatorioNumeroRotaciones == 3 &amp;&amp; indiceAleatorioDireccionRotar == 0 || indiceAleatorioPiezas == 2 &amp;&amp; indiceAleatorioNumeroRotaciones == 1 &amp;&amp; indiceAleatorioDireccionRotar == 1){</span>
+<span class="fc" id="L62">                    piezaAleatoria.moverColumnaIzquierda();</span>
+<span class="pc bpc" id="L63" title="1 of 2 branches missed.">                    if(piezaAleatoriaColumn == 9){</span>
+<span class="nc" id="L64">                    piezaAleatoriaColumn = 8;</span>
+                }
+            }
+<span class="fc" id="L67">}</span>
+
+    public int posiciones(int pos1, int pos2) {
+<span class="fc" id="L70">        return board[pos1][pos2];</span>
+    }
+
+    public void rotarPiezaDerecha() {
+<span class="fc" id="L74">        limpiarPieza();</span>
+        // Verifica si la rotación hacia la derecha es posible
+<span class="fc bfc" id="L76" title="All 2 branches covered.">        if (piezaAleatoria.esPosibleRotarDerecha(pieceFila, piezaAleatoriaColumn, board)) {</span>
+<span class="fc" id="L77">            piezaAleatoria.rotarDerecha();</span>
+<span class="fc" id="L78">            agregarPiezasEnElBoard();</span>
+<span class="fc" id="L79">        } else {</span>
+            // Si la rotación no es posible, simplemente agrega la pieza en su estado actual
+<span class="fc" id="L81">            agregarPiezasEnElBoard();</span>
+        }
+<span class="fc" id="L83">    }</span>
+
+    public void rotarPiezaIzquierda() {
+<span class="fc" id="L86">        limpiarPieza();</span>
+        // Verifica si la rotación hacia la izquierda es posible
+<span class="fc bfc" id="L88" title="All 2 branches covered.">        if (piezaAleatoria.esPosibleRotarIzquierda(pieceFila, piezaAleatoriaColumn, board)) {</span>
+<span class="fc" id="L89">            piezaAleatoria.rotarIzquierda();</span>
+<span class="fc" id="L90">            agregarPiezasEnElBoard();</span>
+<span class="fc" id="L91">        } else {</span>
+            // Si la rotación no es posible, simplemente agrega la pieza en su estado actual
+<span class="fc" id="L93">            agregarPiezasEnElBoard();</span>
+        }
+<span class="fc" id="L95">    }</span>
+
+    public void agregarPiezasEnElBoard() {
+<span class="fc bfc" id="L98" title="All 2 branches covered.">        for (int fila = 0; fila &lt; 4; fila++) {</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">            for (int col = 0; col &lt; 4; col++) {</span>
+<span class="fc bfc" id="L100" title="All 2 branches covered.">                if (piezaAleatoria.matriz[fila][col] == 1) {</span>
+<span class="fc" id="L101">                    int boardRow = pieceFila + fila;</span>
+<span class="fc" id="L102">                    int boardCol = piezaAleatoriaColumn + col;</span>
+
+<span class="pc bpc" id="L104" title="4 of 8 branches missed.">                    if (boardRow &gt;= 0 &amp;&amp; boardRow &lt; 20 &amp;&amp; boardCol &gt;= 0 &amp;&amp; boardCol &lt; 10) {</span>
+<span class="fc" id="L105">                        board[boardRow][boardCol] = 1;</span>
+                    }
+                }
+            }
+        }
+<span class="fc" id="L110">    }</span>
+
+    public void limpiarPieza(){
+<span class="fc bfc" id="L113" title="All 2 branches covered.">        for (int fila = 0; fila &lt; 4; fila++){</span>
+<span class="fc bfc" id="L114" title="All 2 branches covered.">            for (int col = 0; col &lt; 4; col++) {</span>
+<span class="fc bfc" id="L115" title="All 2 branches covered.">                if (piezaAleatoria.matriz[fila][col] == 1) {</span>
+<span class="fc" id="L116">                    int boardRow = pieceFila + fila;</span>
+<span class="fc" id="L117">                    int boardCol = piezaAleatoriaColumn + col;</span>
+
+<span class="pc bpc" id="L119" title="4 of 8 branches missed.">                    if (boardRow &gt;= 0 &amp;&amp; boardRow &lt; 20 &amp;&amp; boardCol &gt;= 0 &amp;&amp; boardCol &lt; 10) {</span>
+<span class="fc" id="L120">                        board[boardRow][boardCol] = 0;</span>
+                    }
+                }
+            }
+        }
+<span class="fc" id="L125">    }</span>
+
+    public void moverPiezaAbajo() {
+<span class="fc" id="L128">        limpiarPieza();</span>
+<span class="fc" id="L129">        pieceFila++; // Mueve la pieza una fila hacia abajo</span>
+        // Verifica si la nueva posición de la pieza es válida
+<span class="fc bfc" id="L131" title="All 2 branches covered.">        if (esMovimientoValido()) {</span>
+<span class="fc" id="L132">            agregarPiezasEnElBoard();</span>
+<span class="fc" id="L133">        } else {</span>
+            // Si el movimiento no es válido, restaura la posición anterior
+<span class="fc" id="L135">            pieceFila--;</span>
+<span class="fc" id="L136">            agregarPiezasEnElBoard();</span>
+<span class="fc" id="L137">            bloquearPiezaEnLugar();</span>
+        }
+<span class="fc" id="L139">    }</span>
+    
+    private boolean esMovimientoValido() {
+<span class="fc bfc" id="L142" title="All 2 branches covered.">        for (int fila = 0; fila &lt; 4; fila++) {</span>
+<span class="fc bfc" id="L143" title="All 2 branches covered.">            for (int col = 0; col &lt; 4; col++) {</span>
+<span class="fc bfc" id="L144" title="All 2 branches covered.">                if (piezaAleatoria.matriz[fila][col] == 1) {</span>
+<span class="fc" id="L145">                    int boardRow = pieceFila + fila;</span>
+<span class="fc" id="L146">                    int boardCol = piezaAleatoriaColumn + col;</span>
+                    // Verifica si la pieza se sale del tablero o colisiona con otra pieza
+<span class="pc bpc" id="L148" title="6 of 16 branches missed.">                    if (boardRow &gt;= 20 || boardCol &lt; 0 || boardCol &gt;= 10 || (boardRow &gt;= 0 &amp;&amp; boardRow &lt; 20 &amp;&amp; boardCol &gt;= 0 &amp;&amp; boardCol &lt; 10 &amp;&amp; board[boardRow][boardCol] == 1)) {</span>
+<span class="fc" id="L149">                        return false;</span>
+                    }
+                }
+            }
+        }
+<span class="fc" id="L154">        return true;</span>
+    }
+    
+    private void bloquearPiezaEnLugar() {
+<span class="fc bfc" id="L158" title="All 2 branches covered.">        for (int fila = 0; fila &lt; 4; fila++) {</span>
+<span class="fc bfc" id="L159" title="All 2 branches covered.">            for (int col = 0; col &lt; 4; col++) {</span>
+<span class="fc bfc" id="L160" title="All 2 branches covered.">                if (piezaAleatoria.matriz[fila][col] == 1) {</span>
+<span class="fc" id="L161">                    int boardRow = pieceFila + fila;</span>
+<span class="fc" id="L162">                    int boardCol = piezaAleatoriaColumn + col;</span>
+    
+<span class="pc bpc" id="L164" title="4 of 8 branches missed.">                    if (boardRow &gt;= 0 &amp;&amp; boardRow &lt; 20 &amp;&amp; boardCol &gt;= 0 &amp;&amp; boardCol &lt; 10) {</span>
+<span class="fc" id="L165">                        board[boardRow][boardCol] = 1;</span>
+                    }
+                }
+            }
+        }
+        // Genera una nueva pieza aleatoria y reinicia su posición
+<span class="fc" id="L171">        generateNewPiece();</span>
+<span class="fc" id="L172">    }</span>
+
+    public boolean juegoTerminado() {
+        // Verifica las primeras filas del tablero para determinar si no se pueden ingresar más piezas
+<span class="nc bnc" id="L176" title="All 2 branches missed.">        for (int fila = 0; fila &lt; 1; fila++) {</span>
+<span class="nc bnc" id="L177" title="All 2 branches missed.">            for (int col = 0; col &lt; board[fila].length; col++) {</span>
+<span class="nc bnc" id="L178" title="All 2 branches missed.">                if (board[fila][col] == 1){</span>
+<span class="nc" id="L179">                    return true; // La fila está ocupada, el juego ha terminado</span>
+                }
+            }
+        }
+<span class="nc" id="L183">        return false; // No hay filas ocupadas en las primeras filas, el juego continúa</span>
+    }
+
+    
+    public void borrarFilaLlena(){
+<span class="fc bfc" id="L188" title="All 2 branches covered.">        for (int fila = board.length - 1; fila &gt;= 0; fila--) {</span>
+<span class="fc" id="L189">            boolean filaLlena = true;</span>
+            // Verifica si todos los elementos de la fila son &quot;1&quot;
+<span class="fc bfc" id="L191" title="All 2 branches covered.">            for (int col = 0; col &lt; board[fila].length; col++) {</span>
+<span class="fc bfc" id="L192" title="All 2 branches covered.">                if (board[fila][col] != 1) {</span>
+<span class="fc" id="L193">                    filaLlena = false;</span>
+<span class="fc" id="L194">                    break;</span>
+                }
+            }
+            // Si la fila está llena, borra la fila moviendo las filas por encima hacia abajo
+<span class="fc bfc" id="L198" title="All 2 branches covered.">            if (filaLlena) {</span>
+<span class="fc bfc" id="L199" title="All 2 branches covered.">                for (int i = fila; i &gt; 0; i--) {</span>
+                    // Copia la fila de arriba en la fila actual
+<span class="fc" id="L201">                    System.arraycopy(board[i - 1], 0, board[i], 0, board[i].length);</span>
+                }
+                // Establece la fila superior como una fila vacía
+<span class="fc" id="L204">                Arrays.fill(board[0], 0);</span>
+<span class="fc" id="L205">                fila++; // Revisa la fila actual nuevamente, ya que ahora contiene las filas de arriba</span>
+            }
+        }
+<span class="fc" id="L208">    }</span>
+    
+    public void printBoard() {
+<span class="nc bnc" id="L211" title="All 2 branches missed.">        for (int i = 0; i &lt; board.length; i++) {</span>
+<span class="nc bnc" id="L212" title="All 2 branches missed.">            for (int j = 0; j &lt; board[i].length; j++) {</span>
+                // Verificar si hay una pieza en la posición (i, j)
+<span class="nc bnc" id="L214" title="All 2 branches missed.">                if (board[i][j] != 0) {</span>
+                    // Si hay una pieza, imprimir un carácter que represente la pieza
+<span class="nc" id="L216">                    System.out.print(&quot;1&quot;); // Puedes usar otro carácter según tus preferencias</span>
+<span class="nc" id="L217">                } else {</span>
+                    // Si no hay una pieza, imprimir un espacio en blanco
+<span class="nc" id="L219">                    System.out.print(&quot;0&quot;);</span>
+                }
+            }
+            // Salto de línea al final de cada fila del tablero
+<span class="nc" id="L223">            System.out.println();</span>
+        }
+<span class="nc" id="L225">    }</span>
+    
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

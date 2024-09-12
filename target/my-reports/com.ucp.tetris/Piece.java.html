@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Piece.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">com.ucp.tetris</a> &gt; <span class="el_source">Piece.java</span></div><h1>Piece.java</h1><pre class="source lang-java linenums">package com.ucp.tetris;
+
+public abstract class Piece implements IRotator {
+<span class="fc" id="L4">    public int matriz[][]  = new int[4][4];</span>
+    protected int matrizRow;
+    protected int matrizCol;
+
+<span class="fc" id="L8">public Piece(){</span>
+<span class="fc" id="L9">    }</span>
+
+public int posiciones(int pos1, int pos2){
+<span class="fc" id="L12">       return matriz[pos1][pos2];</span>
+    }
+
+public void limpiarMatriz(){
+<span class="fc bfc" id="L16" title="All 2 branches covered.">    for(int i = 0; i &lt; 4; i++){</span>
+<span class="fc bfc" id="L17" title="All 2 branches covered.">            for(int j = 0; j &lt; 4; j++){</span>
+<span class="fc" id="L18">                matriz[i][j]=0;</span>
+            }
+        }
+<span class="fc" id="L21">    }</span>
+
+<span class="nc" id="L23">public void moverColumnaIzquierda(){}</span>
+
+public boolean esPosibleRotarDerecha(int fila, int columna, int[][] board) {
+    // Crea una matriz temporal para representar la pieza rotada
+<span class="fc" id="L27">    int[][] rotatedPiece = new int[4][4];</span>
+
+    // Copia la pieza actual a la matriz temporal
+<span class="fc bfc" id="L30" title="All 2 branches covered.">    for (int i = 0; i &lt; 4; i++) {</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        for (int j = 0; j &lt; 4; j++) {</span>
+<span class="fc" id="L32">            rotatedPiece[i][j] = matriz[i][j];</span>
+        }
+    }
+
+    // Realiza una rotación hacia la derecha en la matriz temporal
+<span class="fc bfc" id="L37" title="All 2 branches covered.">    for (int i = 0; i &lt; 4; i++) {</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        for (int j = 0; j &lt; 4; j++) {</span>
+<span class="fc" id="L39">            rotatedPiece[i][j] = matriz[3 - j][i];</span>
+        }
+    }
+
+    // Verifica si la rotación es válida
+<span class="fc bfc" id="L44" title="All 2 branches covered.">    for (int i = 0; i &lt; 4; i++) {</span>
+<span class="fc bfc" id="L45" title="All 2 branches covered.">        for (int j = 0; j &lt; 4; j++) {</span>
+<span class="fc bfc" id="L46" title="All 2 branches covered.">            if (rotatedPiece[i][j] == 1) {</span>
+<span class="fc" id="L47">                int boardRow = fila + i;</span>
+<span class="fc" id="L48">                int boardCol = columna + j;</span>
+
+                // Verifica si la pieza se sale del tablero o colisiona con otra pieza
+<span class="pc bpc" id="L51" title="3 of 10 branches missed.">                if (boardRow &lt; 0 || boardRow &gt;= 20 || boardCol &lt; 0 || boardCol &gt;= 10 || board[boardRow][boardCol] == 1) {</span>
+<span class="fc" id="L52">                    return false;</span>
+                }
+            }
+        }
+    }
+
+<span class="fc" id="L58">    return true;</span>
+}
+
+public boolean esPosibleRotarIzquierda(int fila, int columna, int[][] board) {
+    // Crea una matriz temporal para representar la pieza rotada a la izquierda
+<span class="fc" id="L63">    int[][] rotatedPiece = new int[4][4];</span>
+
+    // Copia la pieza actual a la matriz temporal
+<span class="fc bfc" id="L66" title="All 2 branches covered.">    for (int i = 0; i &lt; 4; i++) {</span>
+<span class="fc bfc" id="L67" title="All 2 branches covered.">        for (int j = 0; j &lt; 4; j++) {</span>
+<span class="fc" id="L68">            rotatedPiece[i][j] = matriz[i][j];</span>
+        }
+    }
+
+    // Realiza una rotación hacia la izquierda en la matriz temporal
+<span class="fc bfc" id="L73" title="All 2 branches covered.">    for (int i = 0; i &lt; 4; i++) {</span>
+<span class="fc bfc" id="L74" title="All 2 branches covered.">        for (int j = 0; j &lt; 4; j++) {</span>
+<span class="fc" id="L75">            rotatedPiece[i][j] = matriz[j][3 - i];</span>
+        }
+    }
+
+    // Verifica si la rotación es válida
+<span class="fc bfc" id="L80" title="All 2 branches covered.">    for (int i = 0; i &lt; 4; i++) {</span>
+<span class="fc bfc" id="L81" title="All 2 branches covered.">        for (int j = 0; j &lt; 4; j++) {</span>
+<span class="fc bfc" id="L82" title="All 2 branches covered.">            if (rotatedPiece[i][j] == 1) {</span>
+<span class="fc" id="L83">                int boardRow = fila + i;</span>
+<span class="fc" id="L84">                int boardCol = columna + j;</span>
+
+                // Verifica si la pieza se sale del tablero o colisiona con otra pieza
+<span class="pc bpc" id="L87" title="4 of 10 branches missed.">                if (boardRow &lt; 0 || boardRow &gt;= 20 || boardCol &lt; 0 || boardCol &gt;= 10 || board[boardRow][boardCol] == 1) {</span>
+<span class="fc" id="L88">                    return false;</span>
+                }
+            }
+        }
+    }
+
+<span class="fc" id="L94">    return true;</span>
+}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

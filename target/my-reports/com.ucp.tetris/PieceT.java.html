@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PieceT.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">com.ucp.tetris</a> &gt; <span class="el_source">PieceT.java</span></div><h1>PieceT.java</h1><pre class="source lang-java linenums">package com.ucp.tetris;
+
+public class PieceT extends Piece{
+
+<span class="fc" id="L5">public PieceT(){</span>
+<span class="fc" id="L6">    piezaInicial();</span>
+<span class="fc" id="L7"></span>
+}
+
+public void piezaInicial(){
+<span class="fc" id="L11">    matriz[0][0]= 1;</span>
+<span class="fc" id="L12">    matriz[0][1]= 1;</span>
+<span class="fc" id="L13">    matriz[0][2]= 1;</span>
+<span class="fc" id="L14">    matriz[1][1]= 1;</span>
+<span class="fc" id="L15">}</span>
+
+@Override
+public void rotarDerecha() {
+<span class="pc bpc" id="L19" title="2 of 8 branches missed.">    if (matriz[0][0] == 1 &amp;&amp; matriz[0][1] == 1 &amp;&amp; matriz[0][2] == 1 &amp;&amp; matriz[1][1] == 1) { //rotar derecha T inicial</span>
+<span class="fc" id="L20">        limpiarMatriz();</span>
+<span class="fc" id="L21">        matriz[0][1] = 1;</span>
+<span class="fc" id="L22">        matriz[1][1] = 1;</span>
+<span class="fc" id="L23">        matriz[1][0] = 1;</span>
+<span class="fc" id="L24">        matriz[2][1] = 1;</span>
+<span class="pc bpc" id="L25" title="1 of 8 branches missed.">        }else if (matriz[0][1] == 1 &amp;&amp; matriz[1][1] == 1 &amp;&amp; matriz[1][0] == 1 &amp;&amp; matriz[2][1] == 1) { //rotar derecha 2 veces </span>
+<span class="fc" id="L26">        limpiarMatriz();</span>
+<span class="fc" id="L27">        matriz[1][0] = 1;</span>
+<span class="fc" id="L28">        matriz[1][1] = 1;</span>
+<span class="fc" id="L29">        matriz[1][2] = 1;</span>
+<span class="fc" id="L30">        matriz[0][1] = 1;</span>
+<span class="pc bpc" id="L31" title="2 of 8 branches missed.">        }else if (matriz[1][0] == 1 &amp;&amp; matriz[1][1] == 1 &amp;&amp; matriz[1][2] == 1 &amp;&amp; matriz[0][1] == 1) {//rotar derecha 3 veces</span>
+<span class="fc" id="L32">        limpiarMatriz();</span>
+<span class="fc" id="L33">        matriz[0][1] = 1;</span>
+<span class="fc" id="L34">        matriz[1][1] = 1;</span>
+<span class="fc" id="L35">        matriz[1][2] = 1;</span>
+<span class="fc" id="L36">        matriz[2][1] = 1;</span>
+<span class="pc bpc" id="L37" title="3 of 8 branches missed.">        }else if (matriz[0][1] == 1 &amp;&amp; matriz[1][1] == 1 &amp;&amp; matriz[2][1] == 1 &amp;&amp; matriz[1][2] == 1) {//rotar derecha 4 veces</span>
+<span class="fc" id="L38">        limpiarMatriz();</span>
+<span class="fc" id="L39">        matriz[0][0]= 1;</span>
+<span class="fc" id="L40">        matriz[0][1]= 1;</span>
+<span class="fc" id="L41">        matriz[0][2]= 1;</span>
+<span class="fc" id="L42">        matriz[1][1]= 1;</span>
+<span class="pc bpc" id="L43" title="4 of 8 branches missed.">        }else if (matriz[0][0] == 1 &amp;&amp; matriz[1][0] == 1 &amp;&amp; matriz[2][0] == 1 &amp;&amp; matriz[1][1] == 1) { //rotar derecha T en columa 0</span>
+<span class="fc" id="L44">        limpiarMatriz();</span>
+<span class="fc" id="L45">        matriz[0][0]= 1;</span>
+<span class="fc" id="L46">        matriz[0][1]= 1;</span>
+<span class="fc" id="L47">        matriz[0][2]= 1;</span>
+<span class="fc" id="L48">        matriz[1][1]= 1;</span>
+    }
+<span class="fc" id="L50">}</span>
+@Override
+public void rotarIzquierda(){
+<span class="pc bpc" id="L53" title="2 of 8 branches missed.">    if (matriz[0][0] == 1 &amp;&amp; matriz[0][1] == 1 &amp;&amp; matriz[0][2] == 1 &amp;&amp; matriz[1][1] == 1) {//rotar izquierda T inicial</span>
+<span class="fc" id="L54">        limpiarMatriz();</span>
+<span class="fc" id="L55">        matriz[0][1] = 1;</span>
+<span class="fc" id="L56">        matriz[1][1] = 1;</span>
+<span class="fc" id="L57">        matriz[1][2] = 1;</span>
+<span class="fc" id="L58">        matriz[2][1] = 1;</span>
+<span class="pc bpc" id="L59" title="1 of 8 branches missed.">        }else if (matriz[0][1] == 1 &amp;&amp; matriz[1][1] == 1 &amp;&amp; matriz[1][2] == 1 &amp;&amp; matriz[2][1] == 1) {//rotar izquierda 2 veces</span>
+<span class="fc" id="L60">        limpiarMatriz();</span>
+<span class="fc" id="L61">        matriz[1][0] = 1;</span>
+<span class="fc" id="L62">        matriz[1][1] = 1;</span>
+<span class="fc" id="L63">        matriz[1][2] = 1;</span>
+<span class="fc" id="L64">        matriz[0][1] = 1;</span>
+<span class="pc bpc" id="L65" title="3 of 8 branches missed.">        }else if (matriz[1][0] == 1 &amp;&amp; matriz[1][1] == 1 &amp;&amp; matriz[1][2] == 1 &amp;&amp; matriz[0][1] == 1) {//rotar izquierda 3 veces</span>
+<span class="fc" id="L66">        limpiarMatriz();</span>
+<span class="fc" id="L67">        matriz[0][1] = 1;</span>
+<span class="fc" id="L68">        matriz[1][1] = 1;</span>
+<span class="fc" id="L69">        matriz[1][0] = 1;</span>
+<span class="fc" id="L70">        matriz[2][1] = 1;</span>
+<span class="pc bpc" id="L71" title="3 of 8 branches missed.">        }else if (matriz[0][1] == 1 &amp;&amp; matriz[1][1] == 1 &amp;&amp; matriz[1][0] == 1 &amp;&amp; matriz[2][1] == 1) {//rotar izquierda 4 veces</span>
+<span class="fc" id="L72">        limpiarMatriz();</span>
+<span class="fc" id="L73">        matriz[0][0]= 1;</span>
+<span class="fc" id="L74">        matriz[0][1]= 1;</span>
+<span class="fc" id="L75">        matriz[0][2]= 1;</span>
+<span class="fc" id="L76">        matriz[1][1]= 1;</span>
+<span class="pc bpc" id="L77" title="4 of 8 branches missed.">        }else if (matriz[0][0] == 1 &amp;&amp; matriz[1][0] == 1 &amp;&amp; matriz[2][0] == 1 &amp;&amp; matriz[1][1] == 1) { </span>
+<span class="fc" id="L78">        limpiarMatriz();</span>
+<span class="fc" id="L79">        matriz[1][0] = 1;</span>
+<span class="fc" id="L80">        matriz[1][1] = 1;</span>
+<span class="fc" id="L81">        matriz[1][2] = 1;</span>
+<span class="fc" id="L82">        matriz[0][1] = 1;</span>
+    }
+<span class="fc" id="L84">}</span>
+
+@Override
+public void moverColumnaIzquierda(){
+<span class="pc bpc" id="L88" title="4 of 8 branches missed.">    if(matriz[0][1] == 1 &amp;&amp; matriz[1][1] == 1 &amp;&amp; matriz[2][1] == 1 &amp;&amp; matriz[1][2] == 1){</span>
+<span class="fc" id="L89">        limpiarMatriz();</span>
+<span class="fc" id="L90">        matriz[0][0]= 1;</span>
+<span class="fc" id="L91">        matriz[1][0]= 1;</span>
+<span class="fc" id="L92">        matriz[2][0]= 1;</span>
+<span class="fc" id="L93">        matriz[1][1]= 1;</span>
+}
+<span class="fc" id="L95">}</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
