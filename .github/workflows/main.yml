@@ -1,0 +1,22 @@
+name: TestsConAccion
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  write-all
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: Billones142/java-jacoco-test@v1.5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          reports_path: "target/my-reports/*"
+          branch_name: "reports"
+          generate_svg: "true"
