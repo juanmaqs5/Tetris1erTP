@@ -4,6 +4,8 @@ public abstract class PieceBase implements IRotator {
     public int matriz[][]  = new int[4][4];
     protected int matrizRow;
     protected int matrizCol;
+    public int rotación;
+
 
 public PieceBase(){
     }
@@ -92,6 +94,13 @@ public boolean esPosibleRotarIzquierda(int fila, int columna, int[][] board) {
     }
 
     return true;
+}
+
+public boolean piezasDelLadoDerecho(){
+    if(rotación == 1){
+        return true;
+    }
+    return false;
 }
 
 }

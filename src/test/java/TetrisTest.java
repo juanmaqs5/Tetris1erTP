@@ -1,7 +1,9 @@
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
+import java.util.function.Predicate;
 import org.junit.Test;
 
 import com.ucp.tetris.Board;
@@ -2028,4 +2030,22 @@ public void rotarIzquierdaTColumna0_Test(){
         }
         assertEquals(tetris.state(), 0);
     }
+
+    @Test
+    public void requerimientoFuncional_Test(){
+        Board board1 = new Board();
+        board1.indiceAleatorioPiezas = 2;
+        board1.indiceAleatorioDireccionRotar = 1;
+        board1.indiceAleatorioNumeroRotaciones = 1;
+        for(int i=0; i < 100; i++){
+            board1.generateNewPiece();
+        }
+        Predicate<PieceBase> h = f->f.getClass().getSimpleName().contains("PieceT");
+        long result = board1.listaObjetos.stream().filter(h).count();
+        assertEquals(result, 100);
+        Predicate<PieceBase> h1 = f->f.piezasDelLadoDerecho();
+        long result1 = board1.listaObjetos.stream().filter(h1).count();
+        assertTrue(result1>0);
+
+}
 }

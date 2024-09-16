@@ -1,5 +1,6 @@
 package com.ucp.tetris;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -15,7 +16,7 @@ public class Board{
     public int puntero;
     public int pieceFila;
     public int numeroDeFilasBorradas = 0;
-
+    public ArrayList<PieceBase> listaObjetos = new ArrayList<>();
     public Board() {
         board = new int[20][10];
     }
@@ -26,24 +27,31 @@ public class Board{
         switch (indiceAleatorioPiezas){
         case 0:
         piezaAleatoria = new PieceSquare();
+        listaObjetos.add(piezaAleatoria);
             break;
         case 1:
         piezaAleatoria = new PieceStick();
+        listaObjetos.add(piezaAleatoria);
         break;
         case 2:
         piezaAleatoria = new PieceT();
+        listaObjetos.add(piezaAleatoria);
         break;
         case 3:
         piezaAleatoria = new PieceDog();
+        listaObjetos.add(piezaAleatoria);
         break;
         case 4:
         piezaAleatoria = new PieceDog(0);
+        listaObjetos.add(piezaAleatoria);
         break;
         case 5:
         piezaAleatoria = new PieceL();
+        listaObjetos.add(piezaAleatoria);
         break;
         case 6:
         piezaAleatoria = new PieceL(0);
+        listaObjetos.add(piezaAleatoria);
         break;
         default:
             break;
@@ -58,6 +66,7 @@ public class Board{
                 piezaAleatoria.rotarDerecha();
         }else if(indiceAleatorioDireccionRotar == 1){
                 piezaAleatoria.rotarIzquierda();
+                piezaAleatoria.rotación = 1;
             }
     }           
             if(indiceAleatorioPiezas == 0 && piezaAleatoriaColumn == 9 || indiceAleatorioPiezas == 2 && indiceAleatorioNumeroRotaciones == 1 && indiceAleatorioDireccionRotar == 0 && piezaAleatoriaColumn == 9 || indiceAleatorioPiezas == 2 && indiceAleatorioNumeroRotaciones == 3 && indiceAleatorioDireccionRotar == 1 && piezaAleatoriaColumn == 9){
